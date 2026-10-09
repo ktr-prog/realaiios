@@ -37,6 +37,8 @@ struct RootView: View {
                 ResponsesView()
             }
         }
+        .frame(maxWidth: 720)
+        .frame(maxWidth: .infinity)
         .alert("System Message",
                isPresented: Binding(
                 get: { model.alertKind != nil },
@@ -109,7 +111,7 @@ struct ChatView: View {
             TextField("", text: $model.input)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.send)
-                .autocorrectionDisabled()
+                .disableAutocorrection(true)
                 .onSubmit { model.send() }
 
             Button {
