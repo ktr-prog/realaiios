@@ -120,7 +120,7 @@ struct WordFixView: View {
 
             TextField("Search", text: $search)
                 .textFieldStyle(.roundedBorder)
-                .autocorrectionDisabled()
+                .disableAutocorrection(true)
 
             List(visibleIndices, id: \.self) { i in
                 Button {
@@ -141,7 +141,7 @@ struct WordFixView: View {
 
             TextField("New spelling", text: $newText)
                 .textFieldStyle(.roundedBorder)
-                .autocorrectionDisabled()
+                .disableAutocorrection(true)
 
             HStack {
                 Button("Back") {
